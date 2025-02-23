@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,22 +20,24 @@ class MyApp extends StatelessWidget {
 
       /// This is for declaring darkTheme (how dark theme will look alike)
       darkTheme: ThemeData(
-          // lowering brightness to dark
-          // it also override all properties according to dark brightness
-          brightness: Brightness.dark),
+        // lowering brightness to dark
+        // it also override all properties according to dark brightness
+        brightness: Brightness.dark,
+      ),
 
       /// similarly for light theme we'll use theme property
       theme: ThemeData(
-          // primarySwatch creates theme according to given color
-          primarySwatch: Colors.deepPurple),
-
+        // primarySwatch creates theme according to given color
+        primarySwatch: Colors.deepPurple,
+        // fontFamily: GoogleFonts.jetBrainsMono().fontFamily
+      ),
 
       ///* we can set initialRoutes for selecting any other route as a default
-      initialRoute: "/home",    // using this we can set any other screen as home or default or first screen of app
+      initialRoute:
+          "/", // using this we can set any other screen as home or default or first screen of app
 
       /// This are routes for flow like app with multiple screens so to route the flow from any screen to other screen
       routes: {
-          
         ///* "/" --> is home route like home  **note: whenever home is define here then it should not be define at home parameter and vice versa
         // "/": (context) => HomePage(),
 
@@ -43,7 +46,6 @@ class MyApp extends StatelessWidget {
 
         /// similarly we can add other routes to other screens
         "/login": (context) => LoginPage(),
-
       },
     );
   }
