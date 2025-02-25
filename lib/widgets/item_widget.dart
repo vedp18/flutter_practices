@@ -8,7 +8,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      surfaceTintColor: Colors.deepPurple,
+      color: Colors.white,
       shadowColor: Colors.deepPurple,
       child: ListTile(
         leading: Image.network(item.imageUrl),
