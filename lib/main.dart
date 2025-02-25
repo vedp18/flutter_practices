@@ -3,7 +3,7 @@ import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,13 +28,13 @@ class MyApp extends StatelessWidget {
       /// similarly for light theme we'll use theme property
       theme:MyTheme.lightTheme(context),
 
-      ///* we can set initialRoutes for selecting any other route as a default
+      //* we can set initialRoutes for selecting any other route as a default
       initialRoute:
           MyRoutes.homeRoute, // using this we can set any other screen as home or default or first screen of app
 
       /// This are routes for flow like app with multiple screens so to route the flow from any screen to other screen
       routes: {
-        ///* "/" --> is home route like home  **note: whenever home is define here then it should not be define at home parameter and vice versa
+        //* "/" --> is home route like home  **note: whenever home is define here then it should not be define at home parameter and vice versa
         // "/": (context) => HomePage(),
 
         "/": (context) => LoginPage(),
