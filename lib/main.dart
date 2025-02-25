@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -22,18 +23,10 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
 
       /// This is for declaring darkTheme (how dark theme will look alike)
-      darkTheme: ThemeData(
-        // lowering brightness to dark
-        // it also override all properties according to dark brightness
-        brightness: Brightness.dark,
-      ),
+      darkTheme: MyTheme.darkTheme(context),
 
       /// similarly for light theme we'll use theme property
-      theme: ThemeData(
-        // primarySwatch creates theme according to given color
-        primarySwatch: Colors.deepPurple,
-        // fontFamily: GoogleFonts.jetBrainsMono().fontFamily
-      ),
+      theme:MyTheme.lightTheme(context),
 
       ///* we can set initialRoutes for selecting any other route as a default
       initialRoute:
