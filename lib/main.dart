@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: HomePage(),      //* either this should be define or "/" should be define in routes property
+      
+      debugShowCheckedModeBanner: false,
 
       /// This is for selecting themeMode of app dark, light, system
       themeMode: ThemeMode.light,
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
 
       ///* we can set initialRoutes for selecting any other route as a default
       initialRoute:
-          "/", // using this we can set any other screen as home or default or first screen of app
+          MyRoutes.homeRoute, // using this we can set any other screen as home or default or first screen of app
 
       /// This are routes for flow like app with multiple screens so to route the flow from any screen to other screen
       routes: {
