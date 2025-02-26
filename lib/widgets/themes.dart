@@ -10,7 +10,8 @@ class MyTheme {
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
+        // fontFamily: GoogleFonts.cherrySwash().fontFamily
+        // fontFamily: GoogleFonts.lobster().fontFamily
 
         // fontFamily: GoogleFonts.jetBrainsMono().fontFamily   //? this doesn't working because network not available in AVD
       );
