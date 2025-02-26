@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  // fontFamily: GoogleFonts.lato().fontFamily,
+                  fontFamily: GoogleFonts.alegreya().fontFamily,
                 ),
               ),
 
