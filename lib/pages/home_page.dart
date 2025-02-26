@@ -52,11 +52,51 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-            ? ListView.builder(
+            //? we will use gridview instead of listview (just to explore new widgets)
+            ? GridView.builder(
                 itemCount: CatalogModel.items!.length,
+                //? GridDelegate is use for deciding how much items to keep in a row or column
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
                 itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: CatalogModel.items![index],
+                  final item = CatalogModel.items![index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: GridTile(
+                      // Text: name of item
+                      header: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: Text(
+                          item.name,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+
+                      // Text: Price of item
+                      footer: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[850],
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: Text(
+                          "\$${item.price.toString()}",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+
+                      // Card: Image of item
+                      child: Image.network(item.imageUrl),
+                    ),
                   );
                 },
               )
