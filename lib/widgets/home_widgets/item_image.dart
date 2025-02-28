@@ -10,7 +10,8 @@ class ItemImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.network(imageUrl)
         .box
-        .square(100)  // without this initially it comes in circular shape and when image loads successfully then it comes to rounded squares
+        .square(
+            100) // without this initially it comes in circular shape and when image loads successfully then it comes to rounded squares
         .rounded
         .padding(EdgeInsets.all(10))
         .color(Colors.white)

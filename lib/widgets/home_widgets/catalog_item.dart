@@ -18,42 +18,49 @@ class CatalogItem extends StatelessWidget {
             child: ItemImage(imageUrl: item.imageUrl),
           ),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Text: Item name
-                item.name.text.lg.bold.color(darkBluishColor).make(),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Text: Item name
+                  item.name.text.lg.bold.color(darkBluishColor).make(),
 
-                // Text: Item description
-                item.desc.text.textStyle(context.captionStyle).make(),
+                  // Text: Item description
+                  item.desc.text.textStyle(context.captionStyle).make(),
 
-                // ButtonBar: Item prie and Buy Button
-                //? ButtonBar is used for holding many buttons together
-                // ignore: deprecated_member_use
-                ButtonBar(
-                  alignment: MainAxisAlignment.spaceBetween,
-                  buttonPadding: EdgeInsets.only(
-                    top: 8,
-                    right: 16,
-                  ),
-                  children: [
-                    "\$${item.price}".text.bold.make(),
-                    //? In velocity_x empty SizedBox can be created like /* <height in double>.heightBox
-                    SizedBox(
-                      height: 34,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor:
-                              WidgetStatePropertyAll(darkBluishColor),
+                  // ButtonBar: Item prie and Buy Button
+                  //? ButtonBar is used for holding many buttons together
+                  //? but it is depriccated and replaced with OverflowBar which does same thing but detached from material
+                  Padding(
+                    padding: const EdgeInsets.only(top: 18.0),
+                    child: OverflowBar(
+                      alignment: MainAxisAlignment.spaceBetween,
+
+                      // buttonPadding: EdgeInsets.only(
+                      //   top: 8,
+                      //   right: 16,
+                      // ),
+                      children: [
+                        "\$${item.price}".text.bold.make(),
+                        //? In velocity_x empty SizedBox can be created like /* <height in double>.heightBox
+                        SizedBox(
+                          height: 34,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  WidgetStatePropertyAll(darkBluishColor),
+                            ),
+                            child: "Buy".text.color(creamColor).make(),
+                          ),
                         ),
-                        child: "Buy".text.color(creamColor).make(),
-                      ),
+                      ],
                     ),
-                  ],
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           )
         ],

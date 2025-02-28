@@ -31,13 +31,37 @@ class ItemDetailPage extends StatelessWidget {
                   child: Column(
                     children: [
                       item.name.text.color(darkBluishColor).bold.xl4.make(),
-
-                      item.desc.text.color(darkBluishColor).textStyle(context.captionStyle).make(),
+                      item.desc.text
+                          .color(darkBluishColor)
+                          .textStyle(context.captionStyle)
+                          .make(),
                     ],
                   ).p24(),
                 ),
               ),
-            )
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(18),
+        color: creamColor,
+        child: OverflowBar(
+          alignment: MainAxisAlignment.spaceBetween,
+          children: [
+            "\$${item.price}".text.xl3.color(red900).bold.make(),
+            //? In velocity_x empty SizedBox can be created like /* <height in double>.heightBox
+            SizedBox(
+              height: 50,
+              width: 100,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(darkBluishColor),
+                ),
+                child: "Buy".text.xl2.color(creamColor).make(),
+              ),
+            ),
           ],
         ),
       ),
