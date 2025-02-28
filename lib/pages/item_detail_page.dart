@@ -52,14 +52,15 @@ class ItemDetailPage extends StatelessWidget {
             "\$${item.price}".text.xl3.color(red900).bold.make(),
             //? In velocity_x empty SizedBox can be created like /* <height in double>.heightBox
             SizedBox(
-              height: 50,
-              width: 100,
+              height: 45,
+              // width: 140,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
+                  padding: WidgetStatePropertyAll(EdgeInsets.all(10)),
                   backgroundColor: WidgetStatePropertyAll(darkBluishColor),
                 ),
-                child: "Buy".text.xl2.color(creamColor).make(),
+                child: "Add to Cart".text.xl2.color(creamColor).make(),
               ),
             ),
           ],

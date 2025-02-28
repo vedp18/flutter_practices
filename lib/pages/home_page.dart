@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/color.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/home_widgets/app_header.dart';
 import 'package:flutter_catalog/widgets/home_widgets/item_list.dart';
 
@@ -63,6 +65,22 @@ class _HomePageState extends State<HomePage> {
               else
                 CircularProgressIndicator().centered().expand(),
             ],
+          ),
+        ),
+      ),
+
+      floatingActionButton: SizedBox(
+        width: 75,
+        height: 75,
+        child: FittedBox(
+          child: FloatingActionButton(
+            foregroundColor: creamColor,
+            backgroundColor: darkBluishColor,
+            tooltip: "Cart",
+            onPressed: () {
+              Navigator.pushNamed(context, MyRoutes.cartRoute);
+            },
+            child: Icon(Icons.shopping_cart,size: 30,),
           ),
         ),
       ),

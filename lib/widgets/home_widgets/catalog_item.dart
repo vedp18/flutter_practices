@@ -19,7 +19,7 @@ class CatalogItem extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(right: 18),
+              padding: const EdgeInsets.only(right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -43,17 +43,24 @@ class CatalogItem extends StatelessWidget {
                       //   right: 16,
                       // ),
                       children: [
-                        "\$${item.price}".text.bold.make(),
+                        "\$${item.price}".text.lg.bold.make(),
                         //? In velocity_x empty SizedBox can be created like /* <height in double>.heightBox
                         SizedBox(
-                          height: 34,
+                          // height: 34,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
+                              // fixedSize: WidgetStatePropertyAll(Size(90, 25)),
+                              padding:
+                                  WidgetStatePropertyAll(EdgeInsets.all(10)),
                               backgroundColor:
                                   WidgetStatePropertyAll(darkBluishColor),
                             ),
-                            child: "Buy".text.color(creamColor).make(),
+                            child: "Add to Cart"
+                                .text
+                                .size(12)
+                                .color(creamColor)
+                                .make(),
                           ),
                         ),
                       ],
